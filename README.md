@@ -1,1 +1,14 @@
 # Steam_profile_searcher
+
+Little project that will use https://pypi.org/project/python-steam-api/ to search steam profiles and then display the info in main window 
+Please note that this is only a amateur learning project that i do in free time.
+
+#How to use it? 
+for now it doesnt really work it only has a placeholder info displayed. 
+but to achieve something you need to add your https://steamcommunity.com/dev/apikey to enviroment variable
+
+in cmd or powershell:
+$env:STEAM_API_KEY="key"
+python steam_prof.py
+
+
