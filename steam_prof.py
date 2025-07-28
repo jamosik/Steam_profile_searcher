@@ -1,9 +1,8 @@
-import requests
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtGui import QPixmap
 from steam_web_api import Steam
 import os
 import sys
+from resultWindow import SecondWindow
 
 class UI(QtWidgets.QMainWindow):
     def __init__(self):
@@ -32,32 +31,26 @@ class UI(QtWidgets.QMainWindow):
             try:
                 res = self.steam.users.get_user_details(self.steamid)["player"]
                 self.SteamIdErr.setVisible(False)
-                self.Result.setVisible(True)
-                self.ProfName.setText(res["personaname"])
-                self.ProfImage.setPixmap(self.GetImage(res["avatarfull"]))
+                self.secWin  = SecondWindow(res)
+                self.secWin.show()
+
 
 
             except Exception as e:
                 print(e)
                 self.SteamIdErr.setVisible(True)
-                self.Result.setVisible(False)
+
 
         else:
             self.SteamIdErr.setVisible(True)
-            self.Result.setVisible(False)
+
 
 
 
 
     def AppStart(self):
-        self.Result.setVisible(False)
         self.SteamIdErr.setVisible(False)
 
-    def GetImage(self, URL):
-        response = requests.get(URL)
-        pixmap = QPixmap()
-        pixmap.loadFromData(response.content)
-        return pixmap
 
 
 app = QtWidgets.QApplication(sys.argv)
