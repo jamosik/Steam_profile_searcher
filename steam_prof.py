@@ -8,6 +8,7 @@ class UI(QtWidgets.QMainWindow):
     def __init__(self):
         super(UI,self).__init__()
         uic.loadUi('Main_Steam.ui',self)
+        self.setStyleSheet(open("style.qss").read())
         self.show()
 
         self.Steamid_Submit_Btn.clicked.connect(self.SteamIdSubmit)
@@ -15,8 +16,11 @@ class UI(QtWidgets.QMainWindow):
         self.AppStart()
 
         self.SteamKey = os.environ.get("STEAM_API_KEY")
-        self.steam = Steam(self.SteamKey)
 
+        try:
+            self.steam = Steam(self.SteamKey)
+        except Exception as e:
+            print(e)
 
 
 
@@ -29,9 +33,10 @@ class UI(QtWidgets.QMainWindow):
         if  self.steamid and len(self.steamid) == 17:
 
             try:
-                res = self.steam.users.get_user_details(self.steamid)["player"]
+                userdata = self.steam.users.get_user_details(self.steamid)["player"]
+                gamedata = self.steam.users.get_user_recently_played_games(self.steamid)
                 self.SteamIdErr.setVisible(False)
-                self.secWin  = SecondWindow(res)
+                self.secWin  = SecondWindow(userdata, gamedata)
                 self.secWin.show()
 
 
