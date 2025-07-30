@@ -44,7 +44,7 @@
     <property name="currentIndex">
      <number>1</number>
     </property>
-    <widget class="QWidget" name="tabWidgetPage1" native="true">
+    <widget class="QWidget" name="tabWidgetPage1">
      <attribute name="title">
       <string>Profile</string>
      </attribute>
@@ -233,7 +233,7 @@ color: rgb(255, 255, 255);</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tabWidgetPage2" native="true">
+    <widget class="QWidget" name="tabWidgetPage2">
      <attribute name="title">
       <string>Games</string>
      </attribute>
@@ -255,28 +255,12 @@ color: rgb(255, 255, 255);</string>
       <property name="title">
        <string>Result</string>
       </property>
-      <widget class="QLabel" name="GameHeadlineLabel">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>30</y>
-         <width>201</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Montserrat&quot;; color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Recently Played Games:</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="ProfilePrivateMess">
        <property name="geometry">
         <rect>
-         <x>240</x>
-         <y>30</y>
-         <width>201</width>
+         <x>90</x>
+         <y>20</y>
+         <width>231</width>
          <height>41</height>
         </rect>
        </property>
@@ -287,37 +271,57 @@ color: rgb(255, 255, 255);</string>
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="GameTitle1">
+      <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>70</y>
-         <width>241</width>
-         <height>41</height>
+         <x>20</x>
+         <y>60</y>
+         <width>521</width>
+         <height>251</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Montserrat&quot;; color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="GameImage1">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>261</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Montserrat&quot;;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <property name="leftMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="GameImage1">
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Montserrat&quot;;</string>
+            </property>
+            <property name="text">
+             <string>IMG</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="GameTitle1">
+            <property name="styleSheet">
+             <string notr="true">font: 20pt &quot;Montserrat&quot;; color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>gamename</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="GameHours1">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Montserrat&quot;; color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Hours</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </widget>

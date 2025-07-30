@@ -12,7 +12,7 @@ in cmd or powershell:
 $env:STEAM_API_KEY="key"
 python steam_prof.py
 
-or in IED add enviromental variable and launch it. 
+or in IDE add enviromental variable and launch it. 
 
 
 
