@@ -14,6 +14,9 @@ python steam_prof.py
 
 or in IDE add enviromental variable and launch it. 
 
+# To launch from exe!!!
+To get the app to work while using exe from releases first you need to add enviromental to your system or you can add it to the bat file i prpared. If you dont do it the app will say you that you have put the wrong steamid
+
 
 
 
