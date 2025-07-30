@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap,QMovie
 import requests
 
 class SecondWindow(QtWidgets.QMainWindow):
@@ -17,9 +17,8 @@ class SecondWindow(QtWidgets.QMainWindow):
             self.ProfilePrivateMess.setText("This Profile is Private!")
         else:
             self.GameTitle1.setText(gamedata["games"][0]["name"])
-            self.GameImage1.setPixmap(self.GetImage(f'https://cdn.cloudflare.steamstatic.com/steam/apps/{gamedata["games"][0]["appid"]}/header.jpg'))
-            self.GameImage1.setScaledContents(True)
-            print(gamedata["games"][0])
+            self.GameImage1.setPixmap(self.GetImage(f'https://cdn.cloudflare.steamstatic.com/steam/apps/{gamedata["games"][0]["appid"]}/capsule_231x87.jpg'))
+            self.GameHours1.setText(str(gamedata["games"][0]["playtime_forever"]//60) + " hours")
 
     def firsttab(self, userdata):
         self.ProfName.setText(userdata['personaname'])
